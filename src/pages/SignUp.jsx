@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { ChevronDown, UserPlus } from 'lucide-react';
+import { ChevronDown, UserPlus, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CreativeNLogo from '../components/NLogo';
 import EnhancedGoogleButton from '../components/GoogleButton';
@@ -69,6 +69,24 @@ const SignUpPage = () => {
         <div className="absolute bottom-1/4 right-1/3 w-1/3 h-1/3 bg-indigo-600/20 blur-[120px] rounded-full" />
         <div className="absolute top-1/3 right-1/4 w-1/4 h-1/4 bg-blue-600/15 blur-[100px] rounded-full" />
       </div>
+      
+      {/* Back Button - Fixed position at top left */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="fixed top-6 left-6 z-20"
+      >
+        <Link 
+          to="/" 
+          className="flex items-center text-white/80 hover:text-white transition-colors group"
+        >
+          <div className="bg-gray-800/50 backdrop-blur-md p-2 rounded-full border border-gray-700/50 group-hover:border-purple-500/50 transition-all duration-300">
+            <ArrowLeft size={20} className="group-hover:scale-110 transition-transform duration-300" />
+          </div>
+          <span className="ml-2 text-sm font-medium opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300">Back to Home</span>
+        </Link>
+      </motion.div>
       
       {/* Sign Up Container */}
       <motion.div 

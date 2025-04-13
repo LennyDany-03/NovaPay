@@ -88,7 +88,7 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden relative pb-16 md:pb-0">
+    <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden relative pb-24 md:pb-0">
       {/* Dynamic Background */}
       <div className="fixed inset-0 z-0 overflow-hidden bg-gradient-to-b from-gray-800 via-gray-900 to-black">
         {/* Particles */}
@@ -124,7 +124,7 @@ const HomePage = () => {
       <BottomNavBar />
       
       {/* Hero Section */}
-      <section className="relative pt-20 min-h-screen flex flex-col items-center justify-center p-6 z-10">
+      <section className="relative pt-20 md:min-h-screen flex flex-col items-center justify-center p-6 z-10">
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -142,7 +142,7 @@ const HomePage = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center"
           >
             <span className="bg-gradient-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent">
-              Welcome, Lenny 👋
+              Welcome to NovaPay
             </span>
           </motion.h1>
           
@@ -159,16 +159,18 @@ const HomePage = () => {
             variants={itemVariants}
             className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 mb-16"
           >
-            <motion.button 
-              whileHover={{ 
-                scale: 1.05, 
-                boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)"
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center"
-            >
-              Get Started <ArrowRight className="ml-2" size={20} />
-            </motion.button>
+            <a href="/login" className="w-full md:w-auto">
+              <motion.button 
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)"
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center"
+              >
+                Get Started <ArrowRight className="ml-2" size={20} />
+              </motion.button>
+            </a>
             
             <motion.button 
               whileHover={{ 
@@ -177,7 +179,7 @@ const HomePage = () => {
               }}
               whileTap={{ scale: 0.98 }}
               onClick={scrollToAbout}
-              className="bg-purple-600/10 text-purple-300 border border-purple-500/30 px-8 py-4 rounded-xl font-bold text-lg"
+              className="w-full md:w-auto bg-purple-600/10 text-purple-300 border border-purple-500/30 px-8 py-4 rounded-xl font-bold text-lg"
             >
               Learn More
             </motion.button>
@@ -294,7 +296,7 @@ const HomePage = () => {
       </section>
       
       {/* Footer CTA */}
-      <section ref={footerRef} className="relative py-20 px-6 z-10 mb-16 md:mb-0">
+      <section ref={footerRef} className="relative py-16 px-6 z-10 mb-20 md:mb-0">
         <motion.div 
           variants={containerVariants}
           initial="hidden"
@@ -310,17 +312,19 @@ const HomePage = () => {
               Start your mindful money journey today 🚀
             </motion.p>
             
-            <motion.button 
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.05, 
-                boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" 
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-10 py-4 rounded-xl font-bold text-lg flex items-center justify-center mx-auto"
-            >
-              Get Started <CheckCircle className="ml-2" size={20} />
-            </motion.button>
+            <a href="/signup" className="block w-full max-w-xs mx-auto">
+              <motion.button 
+                variants={itemVariants}
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 0 20px rgba(147, 51, 234, 0.5)" 
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-4 rounded-xl font-bold text-lg flex items-center justify-center"
+              >
+                Get Started <CheckCircle className="ml-2" size={20} />
+              </motion.button>
+            </a>
           </motion.div>
           
           <motion.p variants={itemVariants} className="text-gray-500 mt-10">
