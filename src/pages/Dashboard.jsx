@@ -221,7 +221,7 @@ const Dashboard = () => {
         {particles.map((particle) => (
           <motion.div
             key={particle.id}
-            className="absolute rounded-full bg-purple-500 opacity-15"
+            className="absolute rounded-full bg-purple-500 opacity-10"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
